@@ -16,7 +16,10 @@ exports.register = async (req, res) => {
             password: hashedPassword
         });
 
-        res.status(201).json(user);
+        res.status(201).json({
+  message: "Register successful",
+  user
+});
 
     } catch (error) {
         res.status(500).json(error);
@@ -52,5 +55,10 @@ exports.login = async (req, res) => {
         { expiresIn: "7d" }
     );
 
-    res.json({ token });
+    res.json({
+  message: "Login successful",
+  token,
+  user
+});
+
 };
