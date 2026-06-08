@@ -5,16 +5,15 @@ const cors = require("cors");
 
 const connectDB = require("./config/db");
 
-const authRoutes =
-    require("./routes/authRoutes");
+const authRoutes = require("./routes/authRoutes");
 
-const productRoutes =
-    require("./routes/productRoutes");
+const productRoutes = require("./routes/productRoutes");
 
-  const orderRoutes = require("./routes/orderRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 
-  const reviewRoutes =
-  require("./routes/reviewRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
+
+const cartRoutes = require("./routes/cartRoutes");
 
 
 const app = express();
@@ -32,6 +31,8 @@ app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
 
 app.use("/api/reviews",reviewRoutes);
+
+app.use("/api/cart", cartRoutes);
 
 app.get("/", (req, res) => {
     res.send("API Running...");

@@ -6,9 +6,7 @@ const {
   createOrder,
   getMyOrders,
   updateOrderStatus
-} = require(
-  "../controllers/orderController"
-);
+} = require("../controllers/orderController");
 
 const protect = require(
   "../middleware/authMiddleware"
