@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
+const protect = require("../middleware/authMiddleware");
+
+router.post("/", protect, (req, res) => {
   res.json({
-    message: "Cart route working"
+    message: "Cart item added"
   });
 });
 
